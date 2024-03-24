@@ -1,0 +1,4 @@
+Text: I love this restaurant! The food is amazing. --> Sentiment: positive
+Text: The service was terrible and the food was cold. --> Sentiment: negative
+Text: It's an average place with decent food. --> Sentiment: neutral
+Text: Just had the best meal of my life! --> Sentiment: positive
