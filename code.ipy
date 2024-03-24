@@ -1,0 +1,42 @@
+import nltk
+from textblob import TextBlob
+
+# Download NLTK resources
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
+
+def analyze_sentiment(text):
+    """
+    Analyze sentiment of the input text.
+    
+    Args:
+    text (str): Input text to analyze
+    
+    Returns:
+    sentiment (str): Sentiment label (positive, negative, or neutral)
+    """
+    # Perform sentiment analysis using TextBlob
+    blob = TextBlob(text)
+    sentiment_polarity = blob.sentiment.polarity
+    
+    # Classify sentiment based on polarity
+    if sentiment_polarity > 0:
+        return 'positive'
+    elif sentiment_polarity < 0:
+        return 'negative'
+    else:
+        return 'neutral'
+
+# Example text data
+text_data = [
+    "I love this restaurant! The food is amazing.",
+    "The service was terrible and the food was cold.",
+    "It's an average place with decent food.",
+    "Just had the best meal of my life!"
+]
+
+# Analyze sentiment for each text in the data
+for text in text_data:
+    sentiment = analyze_sentiment(text)
+    print(f"Text: {text} --> Sentiment: {sentiment}")
